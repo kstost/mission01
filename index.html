@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Increment Button</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #003d80;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="incrementButton">1</button>
+    </div>
+    <script>
+        const button = document.getElementById('incrementButton');
+
+        button.addEventListener('click', () => {
+            let currentNumber = parseInt(button.textContent);
+
+            if (currentNumber < 10) {
+                button.textContent = currentNumber + 1;
+            }
+
+            if (currentNumber + 1 === 10) {
+                button.textContent = '❤️';
+            }
+        });
+    </script>
+</body>
+</html>
